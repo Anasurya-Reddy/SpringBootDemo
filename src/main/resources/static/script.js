@@ -18,11 +18,6 @@ var designation = "Architect & Engineer";
 //     }
 // }
 
-function showDetails() {
-    document.getElementById("userImage").src = userimage;
-    document.getElementById("userDesignation").innerHTML = designation;
-}
-
 async function showRandomUser() {
     // https://randomuser.me/api .. call this api
     // Show Designation, Name in HTML
@@ -30,18 +25,18 @@ async function showRandomUser() {
     // on enter
     // then show actual image of user from api
     // at last an extra button to show next random user
-
+    
     try {
         let response = await fetch("https://randomuser.me/api/");
         let data = await response.json();
-
+        
         let user = data.results[0];
-
+        
         username = user.name.first + " " + user.name.last;
         let gender = user.gender;
         let ssn = user.id.value;
         userimage = user.picture.large;
-
+        
         if( gender == "male" ) {
             document.getElementById("userImage").src = "john_doe.png";
             userDeg = "Architect & Engineer";
@@ -51,11 +46,10 @@ async function showRandomUser() {
         }
         document.getElementById("userName").innerHTML = "Name: " + username;
         document.getElementById("userDesignation").innerHTML = "Designation: " + userDeg;
-        designation = "Designation: " + userDeg + "<br>";
-        designation += "SSN: " + ssn + "<br>";
-        designation += "Location: " + user.location.city + ", " + user.location.country + "<br>";
         designation += "Email: " + user.email + "<br>";
         designation += "Phone: " + user.phone + "<br>";
+        document.getElementById("userImage").src = userimage;
+        document.getElementById("userDesignation").innerHTML = designation;
     } catch (error) {
         console.error("Error fetching user data:", error);
     }
