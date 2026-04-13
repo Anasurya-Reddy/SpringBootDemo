@@ -38,10 +38,10 @@ async function showRandomUser() {
         
         if( gender == "male" ) {
             document.getElementById("userImage").src = "john_doe.png";
-            userDeg = "Architect & Engineer";
+            userDeg = "Architect & Engineer" + "<br>";
         } else {
             document.getElementById("userImage").src = "jane_doe.png";
-            userDeg = "Designer";
+            userDeg = "Designer" + "<br>";
         }
         document.getElementById("userName").innerHTML = "Name: " + username;
         document.getElementById("userDesignation").innerHTML = "Designation: " + userDeg + "<br>";
