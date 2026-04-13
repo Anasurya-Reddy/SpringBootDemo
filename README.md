@@ -36,7 +36,7 @@ This is a simple **Spring Boot web application** demonstrating basic functionali
 1. Clone the repository:
 
 ```
-git clone https://github.com/your-username/SpringBootDemo.git
+git clone https://github.com/Anasurya-Reddy/SpringBootDemo.git
 ```
 
 2. Navigate to the project folder:
