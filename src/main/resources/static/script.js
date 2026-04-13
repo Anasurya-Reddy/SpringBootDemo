@@ -1,8 +1,6 @@
 var john = true;
 var username = "John Doe";
 var userimage = "john_doe.png";
-var userDeg = "Architect & Engineer";
-var designation = "Architect & Engineer";
 
 // function showNextUser() {
 //     if(john) {
@@ -34,7 +32,8 @@ async function showRandomUser() {
         
         username = user.name.first + " " + user.name.last;
         let gender = user.gender;
-        let ssn = user.id.value;
+        let userDeg = "Architect & Engineer";
+
         userimage = user.picture.large;
         
         if( gender == "male" ) {
@@ -45,11 +44,11 @@ async function showRandomUser() {
             userDeg = "Designer";
         }
         document.getElementById("userName").innerHTML = "Name: " + username;
-        document.getElementById("userDesignation").innerHTML = "Designation: " + userDeg;
-        designation += "Email: " + user.email + "<br>";
-        designation += "Phone: " + user.phone + "<br>";
+        document.getElementById("userDesignation").innerHTML = "Designation: " + userDeg + "<br>";
+        userDeg += "Email: " + user.email + "<br>";
+        userDeg += "Phone: " + user.phone + "<br>";
         document.getElementById("userImage").src = userimage;
-        document.getElementById("userDesignation").innerHTML = designation;
+        document.getElementById("userDesignation").innerHTML = userDeg;
     } catch (error) {
         console.error("Error fetching user data:", error);
     }
